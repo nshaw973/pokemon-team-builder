@@ -22,9 +22,9 @@ const fetchData = async (url) => {
     }
   };
   
+  //Fetches the data from the tcg depending on the name of the pokemon entered
   const fetchTcg = async (p) => {
     const result = await pokemon.card.where({ q: `name:${p}` });
-    console.log(result);
     return result;
   };
   
@@ -36,7 +36,7 @@ const fetchData = async (url) => {
   
   // Queries a specific Pokémon by name or ID
   export const searchPokemon = async (p) => {
-    if (!pokemon){
+    if (!p){
       return;
     }
     const url = `https://pokeapi.co/api/v2/pokemon/${p}`;

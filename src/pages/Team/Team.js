@@ -55,8 +55,8 @@ const Team = ({ pokemonData }) => {
         <ul className="flex flex-wrap justify-center">
           {teamArray.map((pokemon, index) => (
             <li key={index}>
-              <div className="mt-2 mb-2 flex justify-center">
-                <div className="card card-side bg-base-100 shadow-xl w-lg h-fit m-4 flex flex-col">
+              <div className="mt-2 mb-2 flex justify-center min-h-full">
+                <div className="card-side bg-base-100 shadow-xl w-lg m-4 flex flex-col ">
                   <div className="flex flex-row">
                     <div className="flex flex-col items-center">
                       {/* Image */}
@@ -64,7 +64,7 @@ const Team = ({ pokemonData }) => {
                         <img
                           src={pokemon.sprites.front_default}
                           alt={pokemon.name}
-                          className="p-2 border-b-2 mb-2"
+                          className="p-2 border-b-2 mb-2 h-32 w-32"
                         />
                         {/* Typing */}
                         <div className="flex flex-row h-2 w-full justify-around">
@@ -85,7 +85,7 @@ const Team = ({ pokemonData }) => {
                     </div>
                     {/* Right Side under the name */}
                     <div className="w-full">
-                      <h2 className="card-title pl-2 bg-neutral-600 text-white flex justify-between items-center p-2 w-full">
+                      <h2 className="card-title pl-2 bg-neutral-600 text-white flex justify-between items-center p-2 min-w-48">
                         {pokeName(pokemon.name)} #{pokemon.id}
                         {/* Delete Button */}
                         <button
@@ -99,8 +99,8 @@ const Team = ({ pokemonData }) => {
                   </div>
                   {/* Dex Entry */}
                   <div>
-                    <p className="flex justify-start p-2">Dex Entry: </p>
-                    <p className="text-left pl-2 text-wrap w-64">
+                    <p className="flex justify-start w-full bg-neutral-500 text-white">Dex Entry: </p>
+                    <p className="text-left p-4 text-wrap w-full min-h-24">
                       {pokemon.flavor_text_entries[1].flavor_text}
                     </p>
                   </div>
