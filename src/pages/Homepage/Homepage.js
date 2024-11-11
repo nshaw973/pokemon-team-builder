@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { getAllPokemon, searchPokemon } from "../../utils/APIs/Pokemon";
 import Cards from "../Cards/Cards";
-import Team from "../Team/Team"
+import Team from "../Team/Team";
 
 const Homepage = () => {
   const [inputValue, setInputValue] = useState("");
@@ -20,21 +20,31 @@ const Homepage = () => {
   return (
     <div className="flex justify-center flex-col">
       <h1 className="bg-black text-white">Create-a-Team</h1>
-{/*       <button onClick={getAllPokemon} className="btn">Get All</button> */}
-      <form onSubmit={handleSubmit} className="pb-2 bg-neutral-600">
-        <input 
-          type="text" 
-          placeholder="Type here" 
-          className="input input-bordered max-w-xs " 
-          value={inputValue} 
-          onChange={(e) => setInputValue(e.target.value)} 
-        />
-        <button type="submit" className="btn mt-2">Search</button>
+      <form
+        onSubmit={handleSubmit}
+        className="pb-2 bg-neutral-600 flex justify-center p-2"
+      >
+        <div className="flex items-center">
+          <input
+            type="text"
+            placeholder="Search Pokemon..."
+            className="input-bordered h-8 rounded-l max-w-xs pl-2"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <button
+            type="submit"
+            className="h-8 bg-white rounded-r text-sm px-4 border"
+          >
+            Search
+          </button>
+        </div>
       </form>
       {pokemonData && (
         <Cards pokemonData={pokemonData} className="flex flex-col" />
       )}
-      <Team pokemonData={pokemonData}/>
+
+      <Team pokemonData={pokemonData} />
     </div>
   );
 };

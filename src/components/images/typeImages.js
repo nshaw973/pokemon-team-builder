@@ -18,46 +18,87 @@ import steel from './types/steel.png';
 import water from './types/water.png';
 
 function getTypeImage(typeName) {
+    let img, color;
+
     switch (typeName) {
         case "bug":
-            return bug;
+            img = bug;
+            color = "bg-green-600";
+            break;
         case "dark":
-            return dark;
+            img = dark;
+            color = "bg-gray-900";
+            break;
         case "dragon":
-            return dragon;
+            img = dragon;
+            color = "bg-blue-700";
+            break;
         case "electric":
-            return electric;
+            img = electric;
+            color = "bg-yellow-500";
+            break;
         case "fairy":
-            return fairy;
+            img = fairy;
+            color = "bg-pink-400";
+            break;
         case "fighting":
-            return fighting;
+            img = fighting;
+            color = "bg-red-700";
+            break;
         case "fire":
-            return fire;
+            img = fire;
+            color = "bg-red-500";
+            break;
         case "flying":
-            return flying;
+            img = flying;
+            color = "bg-cyan-400";
+            break;
         case "ghost":
-            return ghost;
+            img = ghost;
+            color = "bg-purple-600";
+            break;
         case "grass":
-            return grass;
+            img = grass;
+            color = "bg-green-500";
+            break;
         case "ground":
-            return ground;
+            img = ground;
+            color = "bg-yellow-600";
+            break;
         case "ice":
-            return ice;
+            img = ice;
+            color = "bg-blue-300";
+            break;
         case "normal":
-            return normal;
+            img = normal;
+            color = "bg-gray-500";
+            break;
         case "poison":
-            return poison;
+            img = poison;
+            color = "bg-purple-500";
+            break;
         case "psychic":
-            return psychic;
+            img = psychic;
+            color = "bg-pink-600";
+            break;
         case "rock":
-            return rock;
+            img = rock;
+            color = "bg-yellow-800";
+            break;
         case "steel":
-            return steel;
+            img = steel;
+            color = "bg-gray-700";
+            break;
         case "water":
-            return water;
+            img = water;
+            color = "bg-blue-500";
+            break;
         default:
-            return null; // Return null or a default image if typeName is invalid
+            return { img: null, color: "bg-gray-400" }; // Return default values
     }
+
+    return { img, color };
 }
+
 
 export default getTypeImage;
