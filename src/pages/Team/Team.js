@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import getTypeImage from "../../components/images/typeImages";
+import { getCardTitleColor, flavorTextCheck, pokeName } from "../../utils/utils";
+import "./style.css"
 
 const Team = ({ pokemonData }) => {
   // Initialize teamArray as a state variable
   const [teamArray, setTeamArray] = useState([]);
-  
+
   // Load team from localStorage when component mounts
   useEffect(() => {
     const savedTeam = JSON.parse(localStorage.getItem("pokemonTeam"));
@@ -48,20 +50,6 @@ const Team = ({ pokemonData }) => {
     return true;
   };
 
-  //Changes the names and some of the lowercase stats
-  const pokeName = (pokemon) => {
-    switch (pokemon) {
-      case "hp":
-        return "HP";
-      case "special-attack":
-        return "Special-Attack";
-      case "special-defense":
-        return "Special-Defense";
-      default:
-        return pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
-    }
-  };
-
   return (
     <div>
       <button className="btn" onClick={addToTeam}>
@@ -73,7 +61,9 @@ const Team = ({ pokemonData }) => {
           <div>
             <h3 className="flex flex-row justify-between bg-neutral-400 mt-4 p-2 text-white shadow-xl">
               <p>Your Team:</p>
-              <p className="btn btn-xs btn-error" onClick={clearTeam}>Clear Team</p>
+              <p className="btn btn-xs btn-error" onClick={clearTeam}>
+                Clear Team
+              </p>
             </h3>
           </div>
         )}
@@ -86,7 +76,7 @@ const Team = ({ pokemonData }) => {
                   <div className="flex flex-row">
                     <div className="flex flex-col items-center">
                       {/* Image */}
-                      <figure className="flex flex-col p-2 border-2">
+                      <figure className="flex flex-col p-2 border-2 shadow-black shadow-sm shadow-inner">
                         <img
                           src={pokemon.sprites.front_default}
                           alt={pokemon.name}
@@ -110,15 +100,14 @@ const Team = ({ pokemonData }) => {
                       </figure>
                     </div>
                     {/* Right Side under the name */}
-                    <div className="w-full">
+                    <div className="w-full shadow-inner">
                       <div
-                        className={`card-title pl-2 text-white flex justify-between items-center p-2 min-w-48 ${
-                          getTypeImage(pokemon.types[0].type.name).color
-                        }`}
+                        className="card-title pl-2 text-white flex justify-between items-center p-2 min-w-48 shadow-black shadow-sm shadow-inner"
+                        style={getCardTitleColor(pokemon)}
                       >
                         <div className="flex justify-between w-full">
-                          <p>{pokeName(pokemon.name)} </p>
-                          <p>#{pokemon.id}</p>
+                          <p className="header-shadow">{pokeName(pokemon.name)} </p>
+                          <p className="header-shadow">#{pokemon.id}</p>
                         </div>
                         {/* Delete Button */}
 
@@ -148,11 +137,11 @@ const Team = ({ pokemonData }) => {
                   </div>
                   {/* Dex Entry */}
                   <div>
-                    <p className="flex justify-start w-full bg-neutral-500 text-white pl-2">
+                    <p className="flex justify-start w-full bg-neutral-500 text-white pl-2 header-shadow">
                       Dex Entry:{" "}
                     </p>
                     <p className="text-left p-4 text-wrap w-full min-h-24">
-                      {pokemon.flavor_text_entries[1].flavor_text}
+                      {flavorTextCheck(pokemon)}
                     </p>
                   </div>
                 </div>

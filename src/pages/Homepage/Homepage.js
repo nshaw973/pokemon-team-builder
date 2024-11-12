@@ -6,14 +6,24 @@ import Team from "../Team/Team";
 const Homepage = () => {
   const [inputValue, setInputValue] = useState("");
   const [pokemonData, setPokemonData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null); // Add error state
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null); // Clear previous errors
     try {
-      const data = await searchPokemon(inputValue); // Await data from searchPokemon
-      setPokemonData(data); // Set data to state
-    } catch (error) {
-      console.error("Error fetching Pokémon data:", error);
+      const data = await searchPokemon(inputValue.toLowerCase());
+      if (!data || data.length === 0) {
+        throw new Error("Pokémon not found.");
+      }
+      setPokemonData(data);
+    } catch (err) {
+      setError(err.message); // Set error message if no data is found
+      console.error("Error fetching Pokémon data:", err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -40,7 +50,20 @@ const Homepage = () => {
           </button>
         </div>
       </form>
-      {pokemonData && (
+
+      {loading && (
+        <div className="flex justify-center mt-4">
+          <div className="loading loading-bars loading-lg"></div> {/* Add your spinner here */}
+        </div>
+      )}
+
+      {error && !loading && (
+        <div className="text-red-500 text-center mt-4">
+          {error} {/* Display error message */}
+        </div>
+      )}
+
+      {pokemonData && !loading && !error && (
         <Cards pokemonData={pokemonData} className="flex flex-col" />
       )}
 

@@ -23,82 +23,81 @@ function getTypeImage(typeName) {
     switch (typeName) {
         case "bug":
             img = bug;
-            color = "bg-green-600";
+            color = "#4caf50"; // green-600
             break;
         case "dark":
             img = dark;
-            color = "bg-gray-900";
+            color = "#212121"; // gray-900
             break;
         case "dragon":
             img = dragon;
-            color = "bg-blue-700";
+            color = "#1976d2"; // blue-700
             break;
         case "electric":
             img = electric;
-            color = "bg-yellow-500";
+            color = "#fbc02d"; // yellow-500
             break;
         case "fairy":
             img = fairy;
-            color = "bg-pink-400";
+            color = "#f06292"; // pink-400
             break;
         case "fighting":
             img = fighting;
-            color = "bg-red-700";
+            color = "#d32f2f"; // red-700
             break;
         case "fire":
             img = fire;
-            color = "bg-red-500";
+            color = "#f44336"; // red-500
             break;
         case "flying":
             img = flying;
-            color = "bg-cyan-400";
+            color = "#4dd0e1"; // cyan-400
             break;
         case "ghost":
             img = ghost;
-            color = "bg-purple-600";
+            color = "#6a1b9a"; // purple-600
             break;
         case "grass":
             img = grass;
-            color = "bg-green-500";
+            color = "#66bb6a"; // green-500
             break;
         case "ground":
             img = ground;
-            color = "bg-yellow-600";
+            color = "#f57f17"; // yellow-600
             break;
         case "ice":
             img = ice;
-            color = "bg-blue-300";
+            color = "#4fc3f7"; // blue-300
             break;
         case "normal":
             img = normal;
-            color = "bg-gray-500";
+            color = "#9e9e9e"; // gray-500
             break;
         case "poison":
             img = poison;
-            color = "bg-purple-500";
+            color = "#ab47bc"; // purple-500
             break;
         case "psychic":
             img = psychic;
-            color = "bg-pink-600";
+            color = "#ec407a"; // pink-600
             break;
         case "rock":
             img = rock;
-            color = "bg-yellow-800";
+            color = "#f9a825"; // yellow-800
             break;
         case "steel":
             img = steel;
-            color = "bg-gray-700";
+            color = "#616161"; // gray-700
             break;
         case "water":
             img = water;
-            color = "bg-blue-500";
+            color = "#42a5f5"; // blue-500
             break;
         default:
-            return { img: null, color: "bg-gray-400" }; // Return default values
+            return { img: null, color: "#bdbdbd" }; // gray-400 as default
     }
 
     return { img, color };
 }
-
 
 export default getTypeImage;
