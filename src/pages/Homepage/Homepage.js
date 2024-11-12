@@ -50,23 +50,20 @@ const Homepage = () => {
           </button>
         </div>
       </form>
-
       {loading && (
         <div className="flex justify-center mt-4">
-          <div className="loading loading-bars loading-lg"></div> {/* Add your spinner here */}
+          <div className="loading loading-bars loading-lg"></div>{" "}
+          {/* Add your spinner here */}
         </div>
       )}
-
       {error && !loading && (
         <div className="text-red-500 text-center mt-4">
           {error} {/* Display error message */}
         </div>
       )}
-
       {pokemonData && !loading && !error && (
         <Cards pokemonData={pokemonData} className="flex flex-col" />
       )}
-
       <Team pokemonData={pokemonData} />
     </div>
   );

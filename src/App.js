@@ -9,7 +9,7 @@ function App() {
       <Router>
         <div className="flex-grow">
           <Routes>
-            <Route path="/poke-builder" element={<Homepage />} />
+            <Route path="/pokemon-team-builder" element={<Homepage />} />
           </Routes>
         </div>
       </Router>

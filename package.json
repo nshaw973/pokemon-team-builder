@@ -1,6 +1,6 @@
 {
-  "homepage": "https://nshaw973.github.io/poke-builder/",
-  "name": "poke-builder",
+  "homepage": "https://nshaw973.github.io/pokemon-team-builder/",
+  "name": "pokemon-team-builder",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
