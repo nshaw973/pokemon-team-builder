@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/poke-builder/static/css/main.5ffe1500.css",
-    "main.js": "/poke-builder/static/js/main.096d699d.js",
+    "main.css": "/poke-builder/static/css/main.d2c691e4.css",
+    "main.js": "/poke-builder/static/js/main.04b4e813.js",
     "static/js/453.1e675c2c.chunk.js": "/poke-builder/static/js/453.1e675c2c.chunk.js",
     "static/media/fighting.png": "/poke-builder/static/media/fighting.2d1bcb6062b7c1e08d2a.png",
     "static/media/flying.png": "/poke-builder/static/media/flying.a6387a682af07c0b76ef.png",
@@ -10,12 +10,12 @@
     "static/media/poison.png": "/poke-builder/static/media/poison.59d1638905b5cbb8592b.png",
     "static/media/steel.png": "/poke-builder/static/media/steel.43e9c939151083747c0d.png",
     "index.html": "/poke-builder/index.html",
-    "main.5ffe1500.css.map": "/poke-builder/static/css/main.5ffe1500.css.map",
-    "main.096d699d.js.map": "/poke-builder/static/js/main.096d699d.js.map",
+    "main.d2c691e4.css.map": "/poke-builder/static/css/main.d2c691e4.css.map",
+    "main.04b4e813.js.map": "/poke-builder/static/js/main.04b4e813.js.map",
     "453.1e675c2c.chunk.js.map": "/poke-builder/static/js/453.1e675c2c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ffe1500.css",
-    "static/js/main.096d699d.js"
+    "static/css/main.d2c691e4.css",
+    "static/js/main.04b4e813.js"
   ]
 }
