@@ -30,8 +30,11 @@ const fetchData = async (url) => {
   
   // Gets 20 Pokémon
   export const getAllPokemon = async () => {
-    const url = 'https://pokeapi.co/api/v2/pokemon';
-    return await fetchData(url);
+    const url = 'https://pokeapi.co/api/v2/pokemon?limit=10000';
+    const data = await fetchData(url)
+    const pokemonNames = data.results.map(pokemon => pokemon.name);
+    console.log("All Pokémon names:", pokemonNames); // This will log an array of all names
+    return pokemonNames;
   };
   
   // Queries a specific Pokémon by name or ID

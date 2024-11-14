@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import getTypeImage from "../../components/images/typeImages";
-import { getCardTitleColor, flavorTextCheck, pokeName } from "../../utils/utils";
-import "./style.css"
+import {
+  getCardTitleColor,
+  flavorTextCheck,
+  pokeName,
+} from "../../utils/utils";
+import "./style.css";
 
 const Team = ({ pokemonData }) => {
   // Initialize teamArray as a state variable
@@ -52,14 +56,19 @@ const Team = ({ pokemonData }) => {
 
   return (
     <div>
-      <button className="btn" onClick={addToTeam}>
-        Add to Team
-      </button>
+      {pokemonData && (
+        <div className="w-full bg-neutral-200">
+          <button className="bg-white shadow-xl p-2 w-80 mt-2 hover:bg-sky-200 active:bg-sky-400" onClick={addToTeam}>
+            Add to Team
+          </button>
+          <div className="w-full bg-black h-2 mt-2 shadow-xl" />
+        </div>
+      )}
       {/* Display the team */}
       <div className="flex flex-wrap flex-col">
         {arrayCheck() && (
           <div>
-            <h3 className="flex flex-row justify-between bg-neutral-400 mt-4 p-2 text-white shadow-xl">
+            <h3 className="flex flex-row justify-between bg-neutral-400 p-2 text-white shadow-xl">
               <p>Your Team:</p>
               <p className="btn btn-xs btn-error" onClick={clearTeam}>
                 Clear Team
@@ -106,14 +115,16 @@ const Team = ({ pokemonData }) => {
                         style={getCardTitleColor(pokemon)}
                       >
                         <div className="flex justify-between w-full">
-                          <p className="header-shadow">{pokeName(pokemon.name)} </p>
+                          <p className="header-shadow text-sm">
+                            {pokeName(pokemon.name)}{" "}
+                          </p>
                           <p className="header-shadow">#{pokemon.id}</p>
                         </div>
                         {/* Delete Button */}
 
                         <button
                           onClick={() => removeFromTeam(index)}
-                          className="flex justify-center text-sm"
+                          className="flex justify-center text-sm hover:text-red-600"
                         >
                           X
                         </button>
