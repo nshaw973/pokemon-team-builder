@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pokemon-team-builder/static/css/main.d2c691e4.css",
-    "main.js": "/pokemon-team-builder/static/js/main.12e52f31.js",
+    "main.css": "/pokemon-team-builder/static/css/main.81213980.css",
+    "main.js": "/pokemon-team-builder/static/js/main.9959d782.js",
     "static/js/453.a068690b.chunk.js": "/pokemon-team-builder/static/js/453.a068690b.chunk.js",
     "static/media/fighting.png": "/pokemon-team-builder/static/media/fighting.2d1bcb6062b7c1e08d2a.png",
     "static/media/flying.png": "/pokemon-team-builder/static/media/flying.a6387a682af07c0b76ef.png",
@@ -10,12 +10,12 @@
     "static/media/poison.png": "/pokemon-team-builder/static/media/poison.59d1638905b5cbb8592b.png",
     "static/media/steel.png": "/pokemon-team-builder/static/media/steel.43e9c939151083747c0d.png",
     "index.html": "/pokemon-team-builder/index.html",
-    "main.d2c691e4.css.map": "/pokemon-team-builder/static/css/main.d2c691e4.css.map",
-    "main.12e52f31.js.map": "/pokemon-team-builder/static/js/main.12e52f31.js.map",
+    "main.81213980.css.map": "/pokemon-team-builder/static/css/main.81213980.css.map",
+    "main.9959d782.js.map": "/pokemon-team-builder/static/js/main.9959d782.js.map",
     "453.a068690b.chunk.js.map": "/pokemon-team-builder/static/js/453.a068690b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2c691e4.css",
-    "static/js/main.12e52f31.js"
+    "static/css/main.81213980.css",
+    "static/js/main.9959d782.js"
   ]
 }
